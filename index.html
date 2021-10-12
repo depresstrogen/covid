@@ -12,6 +12,16 @@
 
 <body>
     <style>
+        @font-face {
+            src: url(raleway.ttf) format("truetype");
+            font-family: Raleway;
+        }
+
+        @font-face {
+            src: url(open-sans.ttf) format("truetype");
+            font-family: Open Sans;
+        }
+
         .ontario-row {
             font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 16px;
@@ -36,7 +46,7 @@
 
 
         .impersonation {
-            font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-family: Raleway, Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
             margin-bottom: 20px;
         }
 
@@ -53,10 +63,11 @@
         }
 
         .head {
+            font-family: Open Sans;
             box-sizing: inherit;
             display: block;
             margin: 0px auto;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.125rem;
             line-height: 1.5;
             text-align: center;
@@ -68,7 +79,6 @@
         .childcareHead {
             --reach-skip-nav: 1;
             box-sizing: inherit;
-            text-rendering: optimizeLegibility;
             font-feature-settings: normal;
             font-family: Raleway, Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
             margin: 2.5rem 0 1.5rem;
@@ -138,8 +148,13 @@
             margin: 0;
         }
 
+        .info {
+            font-family: Open Sans;
+        }
+
         .infoDiv {
             display: flex;
+
         }
 
         .infoImg {
@@ -184,27 +199,30 @@
             </div>
 
         </div>
-        <div class=calendar>
-            <img src="calendar.svg" />
-            <h2 class=calText1> Valid October 11, 2021 </h2>
-        </div>
-        <h2 class=calText2>from 8:56 p.m. to 11:59 p.m.</h2>
-        <div class=download>
-            <img class=downloadImg src="download.svg" />
-            <img class=emailButton src="fakebuttonemail.png" />
-        </div>
-        <img class=pdfButton src="fakebuttonpdf.png" />
-        <div class=info>
-            <div class=infoDiv>
-                <img class=infoImg src="info.svg" />
-                <p class=info1>You can go to school/child care.</p>
+        <div class=mainText>
+            <div class=calendar>
+                <img src="calendar.svg" />
+                <h2 class=calText1> Valid October 11, 2021 </h2>
             </div>
-            <p class=info2>If you feel sick or not well, even with symptoms not listed in this screening tool, please
-                stay home. Talk with a doctor if necessary.</p>
-            <p class=info3><b>This tool does not send or track any information.</b> Follow your school/child care’s
-                established process for letting staff know about this result (if applicable).
+            <h2 class=calText2>from 8:56 p.m. to 11:59 p.m.</h2>
+            <div class=download>
+                <img class=downloadImg src="download.svg" />
+                <img class=emailButton src="fakebuttonemail.png" />
+            </div>
+            <img class=pdfButton src="fakebuttonpdf.png" />
+            <div class=info>
+                <div class=infoDiv>
+                    <img class=infoImg src="info.svg" />
+                    <p class=info1>You can go to school/child care.</p>
+                </div>
+                <p class=info2>If you feel sick or not well, even with symptoms not listed in this screening tool,
+                    please
+                    stay home. Talk with a doctor if necessary.</p>
+                <p class=info3><b>This tool does not send or track any information.</b> Follow your school/child care’s
+                    established process for letting staff know about this result (if applicable).
 
-            </p>
+                </p>
+            </div>
         </div>
     </div>
 
@@ -250,6 +268,34 @@
         let timeText = "from " + styledTime + " to 11:59 p.m.";
         // Apply to DOM
         time.innerHTML = timeText;
+
+        //1150
+        function adjustHeader() {
+            let text = "FR"
+            if (window.innerWidth > 622) {
+                text = "français";
+            }
+            let frText = document.querySelector(".french");
+            frText.innerHTML = text;
+
+            let ontarioPic = document.querySelector(".ontario-img");
+
+            if (window.innerWidth > 1150) {
+                let adjust = (window.innerWidth - 1150) / 2;
+                //fr = 10
+
+                frText.style.marginRight = (10 + adjust) + "px";
+                ontarioPic.style.marginLeft = (adjust + 10) + "px";
+
+                let impers = document.querySelector(".mainText");
+                impers.style.marginLeft = adjust + "px";
+            }
+        }
+
+        window.addEventListener('resize', function (event) {
+            adjustHeader();
+        });
+        adjustHeader();
     </script>
 
 
