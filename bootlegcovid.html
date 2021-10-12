@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset=utf8>
+    <div class=ontario-row>
+        <img src="ontario.png" class="ontario-img" />
+        <p class=french>FR</p>
+    </div>
+</head>
+
+<body>
+    <style>
+        .ontario-row {
+            font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background-color: rgb(26, 26, 26);
+            color: #fff;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ontario-img {
+            font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            --reach-skip-nav: 1;
+            font-size: 16px;
+            color: #06c;
+            line-height: 0;
+            width: 110px;
+            margin: 1rem 1rem 1rem 1rem;
+
+        }
+
+
+        .impersonation {
+            font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .check {
+            box-sizing: inherit;
+            width: 120px;
+            height: 94px;
+            margin: 1.2rem auto 2rem;
+            background-color: rgb(17, 136, 71);
+            padding: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            bottom: 20px;
+        }
+
+        .head {
+            box-sizing: inherit;
+            display: block;
+            margin: 0px auto;
+            font-weight: bold;
+            font-size: 1.125rem;
+            line-height: 1.5;
+            text-align: center;
+            letter-spacing: 0.48px;
+            color: white;
+            padding: 1rem 5rem;
+        }
+
+        .childcareHead {
+            --reach-skip-nav: 1;
+            box-sizing: inherit;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: normal;
+            font-family: Raleway, Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            margin: 2.5rem 0 1.5rem;
+            line-height: 1.29;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 2.875rem;
+            text-align: center;
+            letter-spacing: 0.15rem;
+            margin-bottom: 0px;
+            padding: 0px 1rem;
+            color: rgb(255, 255, 255);
+        }
+
+        .green {
+            background-color: rgb(17, 136, 71);
+        }
+
+        .calendar {
+            margin-left: 1rem;
+            margin-top: -0.5rem;
+            display: flex;
+        }
+
+        .calText1 {
+            text-align: left;
+            padding-left: 1rem;
+            font-family: Raleway, "Open Sans", Arial, sans-serif;
+            margin-left: 28px;
+        }
+
+        .calText2 {
+            text-align: left;
+            padding-left: 1rem;
+            font-family: Raleway, "Open Sans", Arial, sans-serif;
+            position: relative;
+            bottom: 30px;
+            margin-left: 80px;
+        }
+
+        .download {
+            margin-left: 1rem;
+            display: flex;
+        }
+
+
+        .emailButton {
+            height: 60px;
+            width: 197.3px;
+            margin-left: 40px;
+            display: block;
+        }
+
+        .pdfButton {
+            height: 60px;
+            width: 274.44px;
+            display: block;
+            margin-left: 92px;
+            margin-top: 10px;
+        }
+
+        .french {
+            margin-right: 10px;
+        }
+
+        body {
+            margin: 0;
+        }
+        .infoDiv {
+            display: flex;
+        }
+
+        .infoImg {
+            margin-left: 1rem;
+            margin-top: 2rem;
+            display: flex;
+        }
+
+        .info1 {
+            margin-top: 40px;
+            margin-left: 40px;
+            font-size: 17px;
+            font-weight: lighter;
+            line-height: 25px;
+        }
+
+        .info2 {
+            margin-top: -5px;
+            margin-left: 94px;
+            font-size: 17px;
+            font-weight: lighter;
+            line-height: 25px;
+        }
+        .info3 {
+            margin-top: 10px;
+            margin-left: 94px;
+            font-size: 17px;
+            font-weight: lighter;
+            line-height: 25px;
+        }
+
+    </style>
+
+    <div class=impersonation>
+        <div class=green>
+            <p class=head>COVID-19 school screening result</p>
+            <h1 class=childcareHead>
+                Go to school/child care
+            </h1>
+            <div class=check>
+                <img src="checkmark.svg" />
+            </div>
+
+        </div>
+        <div class=calendar>
+            <img src="calendar.svg" />
+            <h2 class=calText1> Valid October 11, 2021 </h2>
+        </div>
+        <h2 class=calText2>from 8:56 p.m. to 11:59 p.m.</h2>
+        <div class=download>
+            <img class=downloadImg src="download.svg" />
+            <img class=emailButton src="fakebuttonemail.png" />
+        </div>
+        <img class=pdfButton src="fakebuttonpdf.png" />
+        <div class=info>
+            <div class=infoDiv>
+                <img class=infoImg src="info.svg"/>
+                <p class = info1>You can go to school/child care.</p>
+            </div>
+            <p class = info2>If you feel sick or not well, even with symptoms not listed in this screening tool, please stay home. Talk with a doctor if necessary.</p>
+            <p class = info3><b>This tool does not send or track any information.</b> Follow your school/child care’s established process for letting staff know about this result (if applicable).
+
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Auto Date so i dont have to do that fucking quiz one more time
+        let currentTime = new Date();
+        // Get calText1 and 2 from DOM
+        let date = document.body.querySelector(".calText1");
+        console.log(date.innerHTML);
+        let time = document.body.querySelector(".calText2");
+        console.log(time.innerHTML);
+
+        //Months to print
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        // Current Month
+        month = months[currentTime.getMonth()];
+        // Emulate Ontario Government Text
+        dateText = "Valid " + month + " " + currentTime.getDate() + ", " + currentTime.getFullYear();
+        // Apply to DOM
+        date.innerHTML = dateText;
+
+        // Current Hour (24hour time)
+        let hour = currentTime.getHours();
+        let suffix = "a.m.";
+        //if it is past 12
+        if (hour > 12) {
+            // Make it 12 hour time
+            hour = hour - 12;
+            suffix = "p.m."
+        } else if (hour == 12) {
+            // if it is 12 add pm
+            suffix = "p.m."
+        } else if (hour == 0) {
+            hour = 12;
+        }
+        let min = currentTime.getMinutes()
+        if (min < 10) {
+            min = "0" + min;
+        }
+        // Emulate the ~~feds~~ provs
+        let styledTime = hour + ":" + min + " " + suffix;
+        let timeText = "from " + styledTime + " to 11:59 p.m.";
+        // Apply to DOM
+        time.innerHTML = timeText;
+    </script>
+
+
+
+</body>
